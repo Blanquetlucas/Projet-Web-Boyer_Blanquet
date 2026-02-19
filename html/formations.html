@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFREI - Formations</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="titre-site">
+            <img src="../media/logo.png" alt="Logo EFREI" id="logo">
+            <h1>EFREI Paris</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="en-tete-page">
+            <h2>Nos Formations</h2>
+            <p>Cliquez sur une filière pour voir apparaître les formations !</p>
+        </section>
+
+        <div class="conteneur-filieres">
+            <button class="btn-filiere" onclick="afficherPostIts('grande-ecole')">Prog. Grande École</button>
+            <button class="btn-filiere" onclick="afficherPostIts('tech-num')">Technologie & Numérique</button>
+            <button class="btn-filiere" onclick="afficherPostIts('digital')">Digital & Management</button>
+        </div>
+
+        <div id="zone-affichage-postits" class="tableau-postits">
+    </div>
+    </main>
+
+    <footer>
+        <nav><ul><li><a href="a-propos.html">À propos de ce projet</a></li></ul></nav>
+        <p>2025-2026</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
