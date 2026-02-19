@@ -1,0 +1,394 @@
+/* --- 1. Base --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333333;
+    background-image: url('../media/fond.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* --- 2. En-tête (Header) avec Flexbox --- */
+header {
+    background-color: #004b87;
+    color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titre-site {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#logo {
+    height: 60px;
+}
+
+.titre-site h1 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #d868a9;
+}
+
+/* --- 3. Contenu Principal --- */
+main {
+    padding: 40px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #004b87;
+    border-bottom: 3px solid #d868a9;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* --- 4. Pied de page (Footer) --- */
+footer {
+    background-color: #1c2b46;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    clear: both;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer nav ul {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+footer nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer nav a {
+    color: #d868a9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #ffffff;
+}
+
+/* --- 5. Conteneurs Flexbox pour les Cartes (Accueil & Équipe) --- */
+.atouts-conteneur, .grille-programmes, .conteneur-cartes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+/* --- 6. Page Accueil (Cartes) --- */
+.presentation-departement p {
+    margin-bottom: 15px;
+}
+
+.atout-carte {
+    flex: 1; /* Prend l'espace équitablement (1/3 chacun) */
+    min-width: 250px; /* Empêche les cartes d'être trop écrasées */
+    background-color: #ffffff;
+    border-left: 5px solid #d868a9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atout-carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.atout-carte h3 {
+    color: #004b87;
+    margin-bottom: 10px;
+}
+
+.prog-item {
+    flex: 1;
+    min-width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.prog-item h4 {
+    color: #1c2b46;
+    margin-bottom: 10px;
+}
+
+.btn-savoir-plus {
+    display: inline-block;
+    background-color: #004b87;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-savoir-plus:hover {
+    background-color: #d868a9;
+    transform: scale(1.05);
+}
+
+#carrousel {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#image-carrousel {
+    height: 350px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#legende-carrousel {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #1c2b46;
+}
+
+/* --- 7. Page Formations --- */
+.conteneur-filieres {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-filiere {
+    background-color: #004b87;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-filiere:hover {
+    background-color: #d868a9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(216, 104, 169, 0.3);
+}
+
+.tableau-postits {
+    width: 100%;
+}
+
+.post-it {
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-left: 5px solid #d868a9;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.post-it:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.titre-postit {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1c2b46;
+}
+
+.desc-postit {
+    display: none;
+    color: #5b6987;
+    margin-top: 15px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+    line-height: 1.5;
+}
+
+.post-it.ouvert {
+    background-color: #f9fbff;
+    border: 1px solid #004b87;
+    border-left: 5px solid #d868a9;
+    transform: none;
+}
+
+.post-it.ouvert .desc-postit {
+    display: block;
+    animation: apparition 0.4s ease;
+}
+
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 8. Page Équipe --- */
+.carte-professeur {
+    flex: 1; 
+    min-width: 200px;
+    text-align: center;
+    border: none;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-professeur:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.carte-professeur img {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #d868a9;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.carte-professeur h3 {
+    color: #004b87;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.carte-professeur p {
+    color: #5b6987;
+    font-size: 0.95rem;
+}
+
+/* --- 9. Page À propos (Formulaire) --- */
+form {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid #eeeeee;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    color: #1c2b46;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+form input[type="text"], form input[type="email"], form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
+    border-color: #d868a9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(216, 104, 169, 0.2);
+}
+
+form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    background-color: #004b87;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #d868a9;
+    transform: translateY(-2px);
+}
