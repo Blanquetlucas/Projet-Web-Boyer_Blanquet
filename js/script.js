@@ -109,9 +109,10 @@ function afficherPostIts(idFiliere) {
 function validerFormulaire() {
     var nomSaisi = document.getElementById("nom").value;
     var emailSaisi = document.getElementById("email").value;
+    var messageSaisi = document.getElementById("message").value;
     var baliseErreur = document.getElementById("erreur-formulaire");
 
-    if (nomSaisi == "" || emailSaisi == "") {
+    if (nomSaisi == "" || emailSaisi == "" || messageSaisi == "") {
         if(baliseErreur != null) {
             baliseErreur.innerHTML = "Attention : tous les champs doivent être remplis.";
             baliseErreur.style.color = "red"; 
