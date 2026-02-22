@@ -1,4 +1,4 @@
-// --- 1. Carrousel (Changement d'image fixe, sans animation) ---
+// --- 1. Carrousel ---
 
 var imagesCarrousel = [
     "../media/campus1.png", 
@@ -109,15 +109,14 @@ function afficherPostIts(idFiliere) {
 function validerFormulaire() {
     var nomSaisi = document.getElementById("nom").value;
     var emailSaisi = document.getElementById("email").value;
-    var messageSaisi = document.getElementById("message").value;
     var baliseErreur = document.getElementById("erreur-formulaire");
 
-    if (nomSaisi == "" || emailSaisi == "" || messageSaisi == "") {
+    if (nomSaisi == "" || emailSaisi == "") {
         if(baliseErreur != null) {
             baliseErreur.innerHTML = "Attention : tous les champs doivent être remplis.";
             baliseErreur.style.color = "red"; 
         }
-        return false; 
+        return false;
     }
 
     var formatEmailValide = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -130,5 +129,13 @@ function validerFormulaire() {
          return false;
     }
     
-    return true;
+    if(baliseErreur != null) {
+        baliseErreur.innerHTML = "Votre message a bien été envoyé !";
+        baliseErreur.style.color = "green";
+    }
+
+    document.getElementById("nom").value = "";
+    document.getElementById("email").value = "";
+
+    return false; 
 }
